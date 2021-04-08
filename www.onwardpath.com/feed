@@ -1,0 +1,2050 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>OnwardPath</title>
+	<atom:link href="https://www.onwardpath.com/feed" rel="self" type="application/rss+xml" />
+	<link>https://www.onwardpath.com</link>
+	<description>Delivering Digital Experiences</description>
+	<lastBuildDate>Sat, 19 Sep 2020 11:04:51 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7</generator>
+
+<image>
+	<url>https://www.onwardpath.com/wp-content/uploads/2020/09/cropped-icon1-32x32.png</url>
+	<title>OnwardPath</title>
+	<link>https://www.onwardpath.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Secure way of Storing User Credentials</title>
+		<link>https://www.onwardpath.com/2020/07/07/secure-way-of-storing-user-credentials.html</link>
+					<comments>https://www.onwardpath.com/2020/07/07/secure-way-of-storing-user-credentials.html#respond</comments>
+		
+		<dc:creator><![CDATA[Sridhar Chandrasekaran]]></dc:creator>
+		<pubDate>Tue, 07 Jul 2020 17:21:19 +0000</pubDate>
+				<category><![CDATA[Technology]]></category>
+		<category><![CDATA[Encryption]]></category>
+		<category><![CDATA[Java]]></category>
+		<category><![CDATA[Password]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1774</guid>
+
+					<description><![CDATA[One of the common requirements in Java web application is the secure storage of user passwords. This article explains the encryption techniques available to store passwords securely.]]></description>
+										<content:encoded><![CDATA[
+
+One of the common requirements in Java web application is the secure storage of user passwords. Storing user password in plain text will pose a severe security risk and should never be considered. Passwords must be stored in such a way that there is no means of viewing the original password from the stored representation. There are number of algorithms in real world, here we are going to discuss about Encryption Algorithm &amp; Hashing Algorithm
+
+
+
+
+
+<strong>Encryption Algorithm</strong>
+
+
+
+
+
+This is an encoding technique in which message is encoded by using encryption algorithm in such a way that only authorized personnel can access the message or information. It is a special type of encoding that is used for transferring private data. In encryption, data to be encrypted (called plain-text) is transformed using an encryption algorithm like AES encryption or RSA encryption using a secret key called cipher. The encrypted data is called cipher-text, and finally, the secret key can be used by the intended recipient to convert it back to plain-text.
+
+
+
+
+<figure class="wp-block-image size-large"><img class="wp-image-1769" src="https://www.onwardpath.com/wp-content/uploads/2020/03/hashing-vs-encryption.png" alt="" /></figure>
+
+
+
+
+<strong><em>Advantage</em></strong>
+
+
+
+
+<ul>
+ 	<li>This
+approach is better than storing the passwords in plain text.</li>
+</ul>
+
+
+
+
+<strong><em>Disadvantage</em></strong>
+
+
+
+
+<ul>
+ 	<li>If someone knows the encryption algorithm and the secret key that was used for encryption, they can de-crypt the passwords.</li>
+</ul>
+
+
+
+
+<strong>Hashing Algorithm</strong>
+
+
+
+
+
+In hashing, the data is converted to the hash using some hashing function, which can be any number generated from string or text. Few hashing algorithms are: MD5 &amp; SHA256. Data once hashed is non-reversible.
+
+
+
+
+<figure class="wp-block-image size-large"><img class="wp-image-1775" src="https://www.onwardpath.com/wp-content/uploads/2020/03/image.png" alt="" /></figure>
+
+
+
+
+<strong>Hashing</strong>
+
+
+
+
+
+Hashing is the practice of using an algorithm to map
+data of any size to a fixed length. This is called a hash value (or sometimes
+hash code or hash sums)
+
+
+
+
+
+<strong>SALT</strong>
+
+
+
+
+
+SALTED SECURE
+HASH ALGORITHM (SALT): Salted secured hash algorithm helps protect
+password hashes against dictionary attacks by introducing additional
+randomness. Password hash salting is when random data – a salt – is used as an
+additional input to a hash function that hashes a password. The goal of salting
+is to defend against dictionary attacks or attacks against hashed passwords
+using a rainbow table.
+
+
+
+
+
+To salt a password hash, a new salt is randomly generated for each password. The salt and the password are concatenated and then processed with a cryptographic hash function. The resulting output (but not the original password) is stored with the salt in a database. Types of SALT are: Fixed SALT &amp; Random SALT
+
+
+
+
+
+<strong>Fixed SALT</strong>
+
+
+
+
+
+In this technique, we have fixed bit of same string,
+(i.e.) if user uses same password, then the hashed password produced will be
+same, so conflict get arise.
+
+
+
+
+
+<strong>Random SALT</strong>
+
+
+
+
+
+In this technique, we have fixed bit of random string,
+(i.e.) if user uses same password also, the hashed password produced will be
+different, so there will be no conflict.
+
+
+
+
+
+<strong><em>Advantage</em></strong>
+
+
+
+
+<ul>
+ 	<li>In this algorithm there is no way to regenerate the
+password from the hash.</li>
+ 	<li>Whenever the user tries to log in, we will generate
+the hash for the password using the same hashing algorithm and then compare it
+with the hash stored in the database to check whether the password is correct
+or not.</li>
+</ul>
+
+
+
+
+<strong><em>Disadvantage</em></strong>
+
+
+
+
+<ul>
+ 	<li>The main disadvantage of this algorithm is that it is
+not possible to recover a password; you can only reset your password.</li>
+</ul>
+
+
+
+
+<strong>Types of Hashing Algorithm with SALT</strong>
+
+
+
+
+
+<strong>Type – 1</strong>:<strong> Hashing Algorithm with Fixed SALT</strong>
+
+
+
+
+
+In both the examples, the password plus salt key will be stored in DB
+
+
+
+
+<figure class="wp-block-table is-style-stripes">
+<table>
+<tbody>
+<tr>
+<td><strong>Ex &#8211; 1</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Password</td>
+<td>SALT</td>
+<td>Hashed
+Password</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>“my-salt-text”</td>
+<td>0e027d4dbc1bf55d733c5730cdb6799fb8f9e88a</td>
+</tr>
+<tr>
+<td><strong>Ex &#8211; 2</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Password</td>
+<td>SALT</td>
+<td>Hashed
+Password</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>“my-salt-text”</td>
+<td>0e027d4dbc1bf55d733c5730cdb6799fb8f9e88a</td>
+</tr>
+</tbody>
+</table>
+</figure>
+
+
+
+
+In this case where user is giving same password once again “Test”, therefore hashed password produced will be the same hash password” 0e027d4dbc1bf55d733c5730cdb6799fb8f9e88a”.
+
+
+
+
+
+<strong>Type – 2</strong>:<strong> Hashing Algorithm with Random SALT</strong>
+
+
+
+
+
+In both the examples, the password plus salt key will be stored in DB
+
+
+
+
+<figure class="wp-block-table is-style-stripes">
+<table>
+<tbody>
+<tr>
+<td><strong>Ex &#8211; 1</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Password</td>
+<td>SALT</td>
+<td>Hashed
+Password</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>“[B@3d747c7c”</td>
+<td>0e027d4dbc1bf55d733c5730cdb6799fb8f9e89b</td>
+</tr>
+<tr>
+<td><strong>Ex &#8211; 2</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Password</td>
+<td>SALT</td>
+<td>Hashed
+Password</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>“[B@5d747c77”</td>
+<td>5cd2d52fa4c343d35d003d122e165afe7ab640a0</td>
+</tr>
+</tbody>
+</table>
+</figure>
+
+
+
+
+In this case where we are using random SALT, so using
+of same password will not be conflicting with each other.
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2020/07/07/secure-way-of-storing-user-credentials.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How do you retain A-level employees?</title>
+		<link>https://www.onwardpath.com/2020/05/19/how-do-you-retain-a-level-employees.html</link>
+					<comments>https://www.onwardpath.com/2020/05/19/how-do-you-retain-a-level-employees.html#respond</comments>
+		
+		<dc:creator><![CDATA[Devi Senthil]]></dc:creator>
+		<pubDate>Tue, 19 May 2020 14:23:46 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<category><![CDATA[Human Resources]]></category>
+		<category><![CDATA[Staff Augmentation]]></category>
+		<category><![CDATA[Retention]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1789</guid>
+
+					<description><![CDATA[According to Gallup Consulting, a trillion dollars is what U.S. businesses are losing every year due to the voluntary turnover of employees. This article is about effective ways to retain your A-Level employees.]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img class="wp-image-1791" src="https://www.onwardpath.com/wp-content/uploads/2020/05/RetainingEmployees.jpg" alt="" /><figcaption>Retaining A-Level Employees</figcaption></figure>
+
+
+
+
+<strong>A trillion dollars.</strong>
+
+
+
+
+
+According to Gallup Consulting, a trillion dollars is what U.S. businesses are losing every year due to the voluntary turnover of employees.
+
+
+
+
+
+Here’s how it breaks down for an individual organization:
+
+
+
+
+<ul>
+ 	<li>The annual overall turnover rate in the U.S. is 26.3% &#8211; Bureau of Labor Statistics.</li>
+</ul>
+
+
+
+<ul>
+ 	<li>The cost of replacing an individual employee ranges from one-half to two times the employee’s annual salary.</li>
+</ul>
+
+
+
+
+So, a 100-person organization with an average salary of $50,000 could have turnover and replacement costs of $660,000 to $2.6 million per year.
+
+
+
+
+
+Voluntary turnover, in reality, costs much more than money. They include loss of reliable winners, constant innovators, and creative problem solvers.
+
+
+
+
+
+Internally, it breaks down team morale. It can mean lost customer relationships, and in a few cases, it can even threaten your brand.
+
+
+
+
+
+<strong>How do you find out the reasons for voluntary turnovers?</strong>
+
+
+
+
+
+It is usually too late in the cycle. You get to figure that out during the exit interviews when it is structured as a purposeful exercise. This is a lot of valuable information and a significant source of data. If you heed the exit interview results, you can use that to retain the remaining A-level employees.
+
+
+
+
+
+Most often than not, exit interviews are done as a process, and they don’t provide any insights.
+
+
+
+
+
+Make sure that the exit interviews are defined purposefully and use that data effectively.
+
+
+
+
+
+What is the percentage of people that look for a change?
+
+
+
+
+
+40% of employees are planning to change in the next six months. 69% of employees are already passively looking. That’s an alarming statistic.
+
+
+
+
+
+Happy employees rarely look for a job.
+
+
+
+
+
+We spend a lot of time hiring the right candidates. Once we hire them, we want to retain them. That doesn’t happen because these employees aren’t happy as they are not looked afteremotionally and monetarily.
+
+
+
+
+
+About 52% of the people who voluntarily quit say their manager or organization could have done something to prevent them from leaving their job. Half of them said that neither their manager nor any other leaders spoke to them about their job satisfaction or future with the organization in the three months before they left.
+
+
+
+
+
+Think about it. In 3 months, nobody asked them how they felt about their job. Nobody talked about their future. So, it makes sense that they decided that they didn’t have one there.
+
+
+
+
+
+<strong>Here’s how you fix this leak.</strong>
+
+
+
+
+
+Train your managers and leaders to have meaningful conversations with employees about what matters to them. What’s frustrating them? What are their dreams? Where do they want to go?
+
+
+
+
+
+<em>Employee complaints</em>
+
+
+
+
+
+The most common employee complaints include &#8211; no clarity on expectations, no clarity on earning potential, very little feedback on performance, failure to hold scheduled meetings, and no framework to meaningfully succeed.
+
+
+
+
+
+All of these can be attributed to managers and supervisors, and they ought to address these complaints regularly to sustain employee interest in their jobs.
+
+
+
+
+
+<em>Allow employees to use their talents and skills</em>
+
+
+
+
+
+I know a guy who is a stand-up comic, theater artist, character actor in movies, event host, and a partner relationship manager in a software product company.
+
+
+
+
+
+The company encourages him to pursue all of his interests along with him doing the primary role of partner relationship manager. That encouragement keeps him going, as he is recognized for his skills and talents besides his contribution to his job.
+
+
+
+
+
+Make sure that you allow employees to strut their talents and skills in a very creative manner.
+
+
+
+
+
+<em>Make sure your senior management knows that an employee exists.</em>
+
+
+
+
+
+A-level employees need not be in a senior position, but they probably have the potential to create world-changing products or solutions.
+
+
+
+
+
+I know the CEO of an organization that had about 1500 employees. That is a large number for a CEO to interact with personally. The CEO of that organization made it a point to have lunch with different sets of people daily at the cafeteria every day. He gets to interact with four people every day, and in a year, he gets to meet almost everyone.
+
+
+
+
+
+He ensures that he connects with them either at the work level or the personal level in terms of their interests, talents, place of schooling, or the language they spoke.
+
+
+
+
+
+Not just your CEO, your entire senior management should make sure that they connect with employees at all levels and make them feel a part of the larger organizational picture.
+
+
+
+
+
+<em>Responsibility goes with authority</em>
+
+
+
+
+
+No employee wants to have just the responsibilities without the authority to deliver them.
+
+
+
+
+
+Ensure that you trust your employees with responsibility and authority that would allow them to grow, gain new skills, and ample learning opportunities.
+
+
+
+
+
+<em>Make sure that you reward your employees appropriately and frequently</em>
+
+
+
+
+
+The rewards that you provide your employees should speak to their emotional needs in addition to monetary compensation.
+
+
+
+
+
+Recognition is more critical in this context – can be in front of the entire organization, handwritten notes, wining &amp; dining with the CEO, and being made a part of the power circle.
+
+
+
+
+
+<em>Offer the right benefits</em>
+
+
+
+
+
+Make sure that your employees have the right work-life balance.
+
+
+
+
+
+Consider giving them time off from work at regular intervals, provide paternal leave in addition to maternal leave, offer flexible work schedules, and remote working.
+
+
+
+
+
+<em>Be prepared for voluntary turnover</em>
+
+
+
+
+
+Having figured ways to retain A-level employees, do realize that it is not always possible to retain them.
+
+
+
+
+
+Hence, be prepared to address their absence by having clearly defined processes that will prepare the next level to ensure business continuity.
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2020/05/19/how-do-you-retain-a-level-employees.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>5 simple strategies to get your SEO right!</title>
+		<link>https://www.onwardpath.com/2020/03/10/5-simple-strategies-to-get-your-seo-right.html</link>
+					<comments>https://www.onwardpath.com/2020/03/10/5-simple-strategies-to-get-your-seo-right.html#respond</comments>
+		
+		<dc:creator><![CDATA[Sabapathy Narayanan]]></dc:creator>
+		<pubDate>Tue, 10 Mar 2020 07:41:21 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<category><![CDATA[Digital Marketing]]></category>
+		<category><![CDATA[Localized Search]]></category>
+		<category><![CDATA[mobile metadata]]></category>
+		<category><![CDATA[Search Engine Marketing]]></category>
+		<category><![CDATA[Search Engine Optimization]]></category>
+		<category><![CDATA[SEM]]></category>
+		<category><![CDATA[SEO]]></category>
+		<category><![CDATA[Voice Search]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1752</guid>
+
+					<description><![CDATA[When I started in marketing, I had a mentor who used to tell me, “If there is only one thing that you want to do in marketing, it better be Search Engine Optimization (SEO).” To this day, this advice remains invaluable and every digital marketer should focus on this. However, most digital marketers start on ...]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img class="wp-image-1751" src="https://www.onwardpath.com/wp-content/uploads/2020/03/seo3-1024x634.jpg" alt="" /></figure>
+
+
+
+<p class="has-text-align-justify">When I started in
+marketing, I had a mentor who used to tell me, “If there is only one thing that
+you want to do in marketing, it better be Search Engine Optimization (SEO).” To
+this day, this advice remains invaluable and every digital marketer should
+focus on this.</p>
+
+
+
+<p class="has-text-align-justify">However, most digital
+marketers start on SEO and they lose steam sooner than later. Then, they put
+their hands up and say that SEO doesn’t seem to work at all for their business.
+It takes at least a minimum of 6 months before results start to show up and
+most marketers don’t wait till such time.</p>
+
+
+
+<p class="has-text-align-justify">The key aspects of
+SEO are that it takes time, it is a long-term strategy and every effort that
+you put into it is worth your time.</p>
+
+
+
+<p class="has-text-align-justify">Having said that SEO
+is long-term and it requires patience, how do I go about doing this right?</p>
+
+
+
+<p class="has-text-align-justify">Well… there are no
+quick fixes and search engines are too smart to see through the quick fixes.
+You have to focus on making sure that your visitors find information that is relevant
+and useful on your website, in addition to doing all the website housekeeping
+like no broken links, defining tags and alt-tags, optimizing it for different
+browsers, mobile and handheld devices.</p>
+
+
+
+<p class="has-text-align-justify">What are the key
+strategies that you should consider when you want to optimize your site for
+Search Engines?</p>
+
+
+
+<ol>
+ 	<li><strong>Identify your target market</strong></li>
+</ol>
+
+
+
+<p class="has-text-align-justify">Figure out who your
+target market is and identify the kind of messages that interests them. This
+would allow you to look at appropriate keywords for which you can optimize your
+website.</p>
+
+
+
+<p class="has-text-align-justify">Never begin
+optimizing your website if you don’t have the target market clearly defined.</p>
+
+
+
+<ul>
+ 	<li><strong>Filter your search terms</strong></li>
+</ul>
+
+
+
+<p class="has-text-align-justify">You can’t compete
+with the giants that are already there and who have optimized their site for
+too long. Hence, pick your battles appropriately and filter the keywords
+properly – identify search terms that have low competition and try to optimize
+your website for them.</p>
+
+
+
+<p class="has-text-align-justify">Don’t go with a whole
+bunch of generic search terms, which would be a brain-numbing task for you to
+get them optimized.</p>
+
+
+
+<ul>
+ 	<li><strong>Local search needs optimization</strong></li>
+</ul>
+
+
+
+<p class="has-text-align-justify">Google updates search
+listing for geographical areas faster than industry categories. Add city and
+state names, street addresses, zip codes, phone numbers, driving directions,
+and create location-specific pages for every branch while keeping it consistent
+with all your other properties like social and other online platforms</p>
+
+
+
+<ul>
+ 	<li><strong>Perform Search Engine Marketing (SEM) in addition to
+SEO</strong></li>
+</ul>
+
+
+
+<p class="has-text-align-justify">Search ads can
+complement your SEO efforts easily. SEM is short-term and can help you get
+traction on your website immediately, while SEO is long-term. In an ideal
+world, do SEM for the first 6 months and SEO takes over from there.</p>
+
+
+
+<p class="has-text-align-justify">However, if SEM works
+well, you might as well continue running them parallel to your SEO efforts.</p>
+
+
+
+<ul>
+ 	<li><strong>Voice search is the future</strong></li>
+</ul>
+
+
+
+<p class="has-text-align-justify">With the advent of
+Alexa, Siri and OK Google, 20% of the searches have been voice searches.
+Optimization your website for voice is not straightforward and you need to
+perform the following smarts to do that:</p>
+
+
+
+<ul>
+ 	<li>Most voice searches are for local businesses. Ensure
+that you have an updated Google My Business profile with name, hours, street
+address and other relevant information</li>
+ 	<li>Create location-specific pages that would show up in
+voice searches</li>
+ 	<li>Keep your content conversational in your copy as it is
+more likely to be picked up by the search engines</li>
+ 	<li>Design for mobile as the mobile metadata is what is
+used in your voice search</li>
+ 	<li>Convert your keywords into questions. Instead of ‘Gym
+Equipment,’ change it to ‘Where can I find Gym Equipment near me?’</li>
+ 	<li>Use long-tail keywords as they are more likely to
+figure in voice searches instead of the short ones that you target for your web
+and mobile</li>
+</ul>
+
+
+
+<p class="has-text-align-justify">Make sure that you
+audit your website at regular intervals to ensure that you don’t have issues
+like broken HTML, broken links, and badly crafted keywords. You can use tools
+like <a href="http://www.ubersuggest.com/" target="_blank" rel="noopener">Ubersuggest</a> for your keyword suggestions and
+<a href="http://www.answerthepublic.com/" target="_blank" rel="noopener">AnwerThePublic</a> for long-tail
+keywords. This would allow you to include them organically as a part of your
+content.</p>
+
+
+
+
+<em>Tags: Search Engine Optimization, SEO, Search Engine
+Marketing, SEM, Voice Search, Localized Search, mobile metadata, Local Search</em>
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2020/03/10/5-simple-strategies-to-get-your-seo-right.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Why digital marketers should up their ante on email marketing?</title>
+		<link>https://www.onwardpath.com/2020/02/13/why-digital-marketers-should-up-their-ante-on-email-marketing.html</link>
+					<comments>https://www.onwardpath.com/2020/02/13/why-digital-marketers-should-up-their-ante-on-email-marketing.html#respond</comments>
+		
+		<dc:creator><![CDATA[Sabapathy Narayanan]]></dc:creator>
+		<pubDate>Thu, 13 Feb 2020 06:37:34 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<category><![CDATA[Digital Marketing]]></category>
+		<category><![CDATA[Email Marketing]]></category>
+		<category><![CDATA[Email Marketing ROI]]></category>
+		<category><![CDATA[Personalization]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1743</guid>
+
+					<description><![CDATA[The grapevine indigital marketing circles lately is that email marketing does not have a future. Could this be true? “In God we trust, all others must bring data,” is the famous saying of Edwards Deming and I fully believe in that saying. Let us look at the data in front of us to figure out ...]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large is-resized"><img class="wp-image-1742" src="https://www.onwardpath.com/wp-content/uploads/2020/02/unnamed-1-1024x634.jpg" alt="" width="632" height="391" /></figure>
+
+
+
+<p class="has-text-align-justify">The grapevine indigital marketing circles lately is
+that email marketing does not have a future.</p>
+
+
+
+
+Could this be true?
+
+
+
+
+<p class="has-text-align-justify">“In God we trust, all others must bring data,” is the
+famous saying of Edwards Deming and I fully believe in that saying. Let us look
+at the data in front of us to figure out if email marketing is dying.</p>
+
+
+
+<p class="has-text-align-justify"><strong>Point1:</strong>Millenials and
+Gen Z do not check their emails as often as the generations before them</p>
+
+
+
+<p class="has-text-align-justify"><strong>Point
+2:</strong> People now have an attention span of 8 seconds, which is shorter than
+the attention span of a GoldFish at 9 seconds – Microsoft research. Most
+likely, emails may not work in this scenario</p>
+
+
+
+<p class="has-text-align-justify"><strong>Point
+3:</strong> Emails are one-way communication while today’s markets prefer
+conversational means of communication available with social and messaging apps</p>
+
+
+
+<p class="has-text-align-justify">Are these points good enough for us to chuck email
+marketing from our digital marketing repertoire?</p>
+
+
+
+<p class="has-text-align-justify">Before we get there, let us look at some of the
+counterpoints.</p>
+
+
+
+<p class="has-text-align-justify"><strong>Counterpoint
+1:</strong> I receive an average of 150 emails per day and I read and respond to at
+least 60 to 75 of them every day.</p>
+
+
+
+<p class="has-text-align-justify"><strong>Counterpoint
+2:</strong> Close to 100% (well actually 92%) of Internet users have an email
+account – Fourth Source Website</p>
+
+
+
+<p class="has-text-align-justify"><strong>Counterpoint
+3:</strong> Email marketing is 40% more effective than social media – McKinsey
+report</p>
+
+
+
+<p class="has-text-align-justify"><strong>Counterpoint
+4:</strong> 99% of consumers check their email daily with more than 50% checking
+personal accounts more than 10 times a day – HubSpot</p>
+
+
+
+<p class="has-text-align-justify"><strong>Counterpoint
+5:</strong> Email has better ROI in comparison to any other channels and the
+delivery rates are higher than most channels</p>
+
+
+
+<p class="has-text-align-justify">The counterpoints seem to be a clincher in favor of
+email marketing. However, why is it perceived to be something that is not
+working in the digital marketing world?</p>
+
+
+
+<p class="has-text-align-justify">Very few people find the emails that they receive are
+useful to them. Like any marketing message, emails to be differentiated,
+meaningful, personalized, delivering relevant messages based on geographic
+location, interests, and purchase history.</p>
+
+
+
+<p class="has-text-align-justify">Also, you shouldn’t be sending the same message to
+everyone on your list. You should be able to understand your recipients and
+segment them into multiple buckets. Once this segmentation is done, you should
+send relevant messages to the list.</p>
+
+
+
+
+<strong>A
+case in point</strong>
+
+
+
+
+<p class="has-text-align-justify">I was heading marketing for an organization in the B2B
+space and we had built a huge list of subscribers in a span of more than ten
+years. We were constantly communicating with them using emails – both
+educational and promotional content.</p>
+
+
+
+<p class="has-text-align-justify">This effort was bringing in a substantial number of
+leads, close to 100 qualified leads in a month. People in my team though
+weren’t very kicked about sending emails and they always wanted out of it and
+try out other channels of communication. Though we had a bouquet of activities
+including thought leadership, event participation, speaking gigs, and social, I
+still did not want to lose out on the leads that we were generating from email
+marketing.</p>
+
+
+
+<p class="has-text-align-justify">I went and told my team members that I am fine with
+dropping email marketing as long as they figure out other ways to generate the
+100 qualified leads every month. I didn’t want to fix something that wasn’t
+broken.</p>
+
+
+
+<p class="has-text-align-justify">To date, and it has been 10 years since I quit that company, I hear that email marketing is still one of their best-performing tools.</p>
+
+
+
+<p class="has-text-align-justify"><em>Tags: Digital Marketing, Email Marketing, Email Marketing ROI, Personalization, Messaging</em></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2020/02/13/why-digital-marketers-should-up-their-ante-on-email-marketing.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Introduction to Log4j</title>
+		<link>https://www.onwardpath.com/2020/02/07/introduction-to-log4j.html</link>
+					<comments>https://www.onwardpath.com/2020/02/07/introduction-to-log4j.html#respond</comments>
+		
+		<dc:creator><![CDATA[Balamurugan S]]></dc:creator>
+		<pubDate>Fri, 07 Feb 2020 15:36:41 +0000</pubDate>
+				<category><![CDATA[Technology]]></category>
+		<category><![CDATA[Eclise Log4j Setup]]></category>
+		<category><![CDATA[log4j]]></category>
+		<category><![CDATA[logging]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1717</guid>
+
+					<description><![CDATA[What is logging? Tracing program execution during development Debugging Providing an audit trail for a program Recording soft-errors (lost connections, etc.) for monitoring performance and troubleshooting A logging framework lets you use different logging levels Adding logging code Replaces System.out.println() calls throughout Utility of logging code is improved if it’s consistent—logs can be searched. Five ...]]></description>
+										<content:encoded><![CDATA[<h3>What is logging?</h3>
+<ul>
+<li>Tracing program execution during development</li>
+<li>Debugging</li>
+<li>Providing an audit trail for a program</li>
+<li>Recording soft-errors (lost connections, etc.) for monitoring performance and troubleshooting</li>
+<li>A logging framework lets you use different logging levels</li>
+</ul>
+<h3>Adding logging code</h3>
+<ul>
+<li>Replaces <em>System.out.println()</em> calls throughout</li>
+<li>Utility of logging code is improved if it’s consistent—logs can be searched.</li>
+<li>Five recognized message priorities: DEBUG, INFO, WARN, ERROR &amp; FATAL</li>
+</ul>
+<h3>Installing Log4J</h3>
+<ul>
+<li>Download a zip or compressed tar file from Apache.org website</li>
+<li>Uncompress to a local directory</li>
+<li>In your Eclipse project’s properties, Locate Java Build Path &#8211; On Libraries page, click on Add External Jars</li>
+<li>Browse for your Log4J directory, and locate the log4J jar file in the /dist/lib directory</li>
+<li>Click Open, followed by OK</li>
+</ul>
+<h3>Creating a Log4J configuration file</h3>
+<p>The easiest way to configure Log4J is to add a <em>log4j.properties</em> file to your source directory. There are many options available which we won’t cover here, but essentially you need to define:</p>
+<ul>
+<li>A logger</li>
+<li>An appender</li>
+<li>A pattern layout</li>
+</ul>
+<h4></h4>
+<h4>Log4j Set-Up Process</h4>
+<p>The following example uses the default root logger, appends to the console and prints the date, time, message priority, thread and message</p>
+<p><b>Step 1 &#8211; Download the Log4j library</b></p>
+<p>If you are using Maven 2 for your project, you do not need to download the binary. You can simply declare it as a dependency in your Maven 2 <em>pom.xml</em> and Maven will grab the library for you. Declare it as follows</p>
+<p><tt>&lt;dependency&gt;<br />
+&lt;groupId&gt;log4j&lt;/groupId&gt;<br />
+&lt;artifactId&gt;log4j&lt;/artifactId&gt;<br />
+&lt;version&gt;1.2.17&lt;/version&gt;<br />
+&lt;/dependency&gt;<br />
+</tt></p>
+<p><b>Step 2 &#8211; Import the jar file into your web project</b></p>
+<p>If your using Maven 2, you can skip this step; after declaring the dependency, Maven will put the jar file in the proper place automatically when you build.</p>
+<p>Import the <em>log4j</em> jar file into your <em>JavaBuild</em> Path</p>
+<p>Download from here: <a href="http://www.java2s.com/Code/Jar/l/Downloadlog4j1217jar.htm" target="_blank" rel="noopener">Downloadlog4j1217jar</a></p>
+<p><b>Step 3 &#8211; Create Log4j Properties file</b></p>
+<p>In Eclipse, right click on the <em>src</em> folder</p>
+<p>Select New &gt; Others &gt; File</p>
+<p>Create file with name <em>log4j.properties</em> and add below property settings</p>
+<p><tt># Root logger option<br />
+log4j.rootLogger=INFO, file<br />
+# Direct log messages to a log file<br />
+log4j.appender.file=org.apache.log4j.RollingFileAppender<br />
+#Redirect to Tomcat logs folder<br />
+#log4j.appender.file.File=${catalina.home}/logs/logging.log<br />
+log4j.appender.file.File=C:\log\applog.log<br />
+#log4j.appender.file.File=C:\Program Files\Apache Software Foundation\Tomcat 7.0\geologs\applog.log<br />
+log4j.appender.file.MaxFileSize=10MB<br />
+log4j.appender.file.MaxBackupIndex=10<br />
+log4j.appender.file.layout=org.apache.log4j.PatternLayout<br />
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} UTC %-5p %c{1}:%L - %m%n<br />
+</tt></p>
+<p><b>Step 5 &#8211; Put logging code in your classes</b></p>
+<p>The last thing you need to do is drop some logging code in a class and test this whole setup.</p>
+<p>Add the following to the imports section of your java code:</p>
+<p><tt>import org.apache.log4j.Logger;<br />
+static Logger log = Logger.getLogger(MyClassName.class);<br />
+</tt></p>
+<p>Throw some logging statements in your code where you know they&#8217;ll be fired right away when you run your app. For example:</p>
+<p><tt>log.trace("Hello");<br />
+log.debug("Hello");<br />
+log.info("Hello");<br />
+log.error("Hello");<br />
+log.warn("Hello");<br />
+log.fatal("Hello");<br />
+</tt></p>
+<p><b>Step 6 &#8211; Run your app and make sure it works</b></p>
+<p>Finally, run your app and make sure it works. You should see log lines in your file where you setup your appender.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2020/02/07/introduction-to-log4j.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Introduction to Maven &#038; Jenkins</title>
+		<link>https://www.onwardpath.com/2020/01/30/introduction-to-maven-jenkins.html</link>
+					<comments>https://www.onwardpath.com/2020/01/30/introduction-to-maven-jenkins.html#respond</comments>
+		
+		<dc:creator><![CDATA[Gurujegannathan]]></dc:creator>
+		<pubDate>Thu, 30 Jan 2020 10:21:49 +0000</pubDate>
+				<category><![CDATA[Technology]]></category>
+		<category><![CDATA[CICD]]></category>
+		<category><![CDATA[DevOps]]></category>
+		<category><![CDATA[Jenkins]]></category>
+		<category><![CDATA[Maven]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1683</guid>
+
+					<description><![CDATA[What is Maven ? It is a powerful project management tool that is based on POM (Project Object Model) It is used for project build, dependency and documentation It can be used for building and managing any Java-based project What can Maven do? Can easily build a project Can add jars, plugins and other dependencies ...]]></description>
+										<content:encoded><![CDATA[<h4>What is Maven ?</h4>
+<ul>
+<li>It is a powerful project management tool that is based on POM (Project Object Model)</li>
+<li>It is used for project build, dependency and documentation</li>
+<li>It can be used for building and managing any Java-based project</li>
+</ul>
+<h4>What can Maven do?</h4>
+<ul>
+<li>Can easily build a project</li>
+<li>Can add jars, plugins and other dependencies based on needs</li>
+<li>Helpful in updating central repository of JAR&#8217;s and other dependencies</li>
+<li>Can build any number of projects into packaging as JAR, WAR etc</li>
+</ul>
+<h4>Features of Maven</h4>
+<ul>
+<li>Simple project setup that follows best practices</li>
+<li>Reduces time &amp; manual intervention on project dependency management across environments</li>
+<li>Allows to do multiple builds at the same time</li>
+<li>Consistent usage across all projects</li>
+<li>Dependency management including automatic updating</li>
+<li>Has a large and growing repository of libraries</li>
+<li>Extensible, with the ability to easily write plugins in Java or scripting languages</li>
+<li>Provides instant access to new features with little or no extra configuration</li>
+</ul>
+<h4>How maven works?</h4>
+<figure class="wp-block-image size-large"><img class="wp-image-1684" src="https://www.onwardpath.com/wp-content/uploads/2020/01/image.png" alt="" /></figure>
+<h4>Overview of Maven core concepts</h4>
+<div class="wp-block-media-text alignwide">
+<figure class="wp-block-media-text__media"><img class="aligncenter wp-image-1687 size-full" src="https://www.onwardpath.com/wp-content/uploads/2020/01/image-3.png" alt="Maven Concepts" width="442" height="362" /></figure>
+</div>
+<div class="wp-block-image is-style-default">
+<figure class="aligncenter size-large is-resized">
+<p><div id="attachment_1688" style="width: 750px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-1688" class="wp-image-1688 size-full" src="https://www.onwardpath.com/wp-content/uploads/2020/01/image-4.png" alt="POM File" width="740" height="606" /><p id="caption-attachment-1688" class="wp-caption-text">Sample POM file</p></div></figure>
+</div>
+<h4>What is Jenkins?</h4>
+<ul>
+<li>Jenkins is an open source automation tool written in Javawith plugins built for Continuous Integration purpose</li>
+<li>It is used to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build</li>
+<li>It also allows you to continuously deliver your software by integrating with a large number of testing and deployment technologies With Jenkins, organizations can accelerate the software development process through automation</li>
+<li>Jenkins integrates development life-cycle processes of all kinds, including build, document, test, package, stage, deploy, static analysis and much more</li>
+<li>Jenkins achieves Continuous Integration with the help of plugins. Plugins allows the integration of Various DevOps stages If you want to integrate a particular tool, you need to install the plugins for that tool. For example: Git, Maven 2 project, Amazon EC2, HTML publisher etc.</li>
+</ul>
+<figure class="wp-block-image size-large"><img class="wp-image-1691" src="https://www.onwardpath.com/wp-content/uploads/2020/01/image-6.png" alt="" /></figure>
+<h4>Advantages of Jenkins</h4>
+<ul>
+<li>It is an open source tool with great community support</li>
+<li>It is easy to install &amp; configure</li>
+<li>It has 1000+ plugins to ease your work. If a plugin does not exist, you can code it and share with the community</li>
+<li>It is built with Java and hence, it is portable to all the major platforms</li>
+</ul>
+<h4>Continuous Integration through Jenkins</h4>
+<ul>
+<li>Continuous Integration is a development practice in which the developers are required to commit the changes to the source code in a shared repository several times a day or more frequently</li>
+<li>This allows the teams to detect the problems early</li>
+</ul>
+<figure class="wp-block-image size-large"><img class="wp-image-1692" src="https://www.onwardpath.com/wp-content/uploads/2020/01/image-7.png" alt="" /></figure>
+<figure class="wp-block-table aligncenter">
+<table>
+<tbody>
+<tr>
+<td><strong>Before Jenkins</strong></td>
+<td><strong>After Jenkins</strong></td>
+</tr>
+<tr>
+<td valign="top">The entire source code was built and then tested. Locating and fixing bugs in the event of build and test failure was difficult and time consuming, which in turn slows the software delivery process</td>
+<td valign="top">Every commit made in the source code is built and tested. So, instead of checking the entire source code developers only need to focus on a particular commit. This lead to frequent new software releases</td>
+</tr>
+<tr>
+<td valign="top">Developers have to wait for test results</td>
+<td valign="top">Developers know the test result of every commit made in the source code on the run</td>
+</tr>
+<tr>
+<td valign="top">The whole process is manual</td>
+<td valign="top">Only need to commit changes to the source code and Jenkins will automate the rest of the process for you</td>
+</tr>
+</tbody>
+</table>
+</figure>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2020/01/30/introduction-to-maven-jenkins.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Digital marketing and emerging technologies</title>
+		<link>https://www.onwardpath.com/2020/01/28/digital-marketing-and-emerging-technologies.html</link>
+					<comments>https://www.onwardpath.com/2020/01/28/digital-marketing-and-emerging-technologies.html#respond</comments>
+		
+		<dc:creator><![CDATA[Pandyan Ramar]]></dc:creator>
+		<pubDate>Tue, 28 Jan 2020 08:01:49 +0000</pubDate>
+				<category><![CDATA[Digital Marketing]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1679</guid>
+
+					<description><![CDATA[2019 was touted as the year of emerging technologies like voice search, and artificial intelligence. How did they perform? Did they remain as emerging technologies or have they made an impact in our everyday business? From a digital marketing standpoint, artificial intelligence, voice search, personalization, location-based information, real-time ads focused on your consumption or behavior ...]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img class="wp-image-1673" src="https://www.onwardpath.com/wp-content/uploads/2020/01/unnamed-3-min-1024x634.png" alt="" /></figure>
+
+
+
+
+
+
+
+
+2019 was touted as the
+year of emerging technologies like voice search, and artificial intelligence.
+
+
+
+
+
+How did they perform?
+Did they remain as emerging technologies or have they made an impact in our
+everyday business?
+
+
+
+
+<p class="has-text-align-justify">From a digital
+marketing standpoint, artificial intelligence, voice search, personalization,
+location-based information, real-time ads focused on your consumption or
+behavior patterns have become mainstream and have become the must-dos in a
+digital marketer’s armor. This is enhanced by the availability of 5G networks.</p>
+
+
+
+
+Let us look at them in
+detail here:
+
+
+
+
+
+<strong>Voice
+search</strong>
+
+
+
+
+<p class="has-text-align-justify">I know an 80-year-old
+person who is not technology savvy and he isn’t someone who looks forward to
+using technology for his day-to-day affairs. He carries a smartphone as is the
+norm nowadays and he was using it only for making and receiving calls. However,
+things changed in the last year when he started to use “OK Google” to navigate,
+identify locations, to shop, and to know about events and sports regularly. He
+loves his smartphone now more than ever as it has allowed him to be
+independent.</p>
+
+
+
+<p class="has-text-align-justify">This was made possible
+only because of the voice search. In his case, it was Google. Others that are
+prominent in this space include Apple’s Siri, Amazon’s Alexa and Cortana’s
+Cortana.</p>
+
+
+
+
+Now, all of these
+engines are getting integrated into the enterprise apps as well and their usage
+is soaring.
+
+
+
+
+<p class="has-text-align-justify">Businesses need to be
+optimized for voice search. About 30% of the search in 2020 is expected to be
+voice. When you look at it, it is an unaddressed area, as only 4% of the
+businesses are currently optimized for voice search. Amazon alone is expected
+to drive about $5 billion in revenues through voice search in 2020.</p>
+
+
+
+
+<strong>Artificial
+Intelligence</strong>
+
+
+
+
+<ul>
+ 	<li>Are you learning what your consumers want?</li>
+ 	<li>Do you know what your customer’s behavior looks like?</li>
+ 	<li>Do you know the interests of your customer segments?</li>
+</ul>
+
+
+
+
+Are we capturing all of
+this information in a structured format?
+
+
+
+
+
+What do we do with this
+learning?
+
+
+
+
+<p class="has-text-align-justify">This is fairly complex
+when you try to understand them manually and leverage it for your digital
+promotions. This is where artificial intelligence (AI) comes in.</p>
+
+
+
+
+However, most
+enterprises haven’t adopted AI systems that would help them run their businesses
+smarter and profitable.
+
+
+
+
+<p class="has-text-align-justify">AI adoption in the
+Enterprise, a report done by O’Riley found that under 75% of respondents were
+either evaluating or not yet using AI. This means only 25% of the enterprises
+have adopted AI, which puts them in a very advantageous position.</p>
+
+
+
+
+AI systems would allow
+these enterprises to personalize and focus their promotions to their target
+segments creatively and profitably.
+
+
+
+
+<p class="has-text-align-justify">As you may know, AI
+systems continue to learn and optimize actionable outcomes. This would put
+enterprises that have functioning AI systems will reap the benefits.</p>
+
+
+
+
+It is time that you
+drive your promotional strategies with AI systems at the core.
+
+
+
+
+<p class="has-text-align-justify">Voice search and
+Artificial Intelligence are going to be key for organizations in the coming
+years. This would allow you to address your user expectations and give them
+what they want, where they want and when they want it.</p>
+
+
+
+
+<em>Tags: Voice Search, Artificial Intelligence, AI, Personalization,
+AI Systems, Web Personalization, Digital Promotions, Digital Marketing</em>
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2020/01/28/digital-marketing-and-emerging-technologies.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>5 key marketing strategies to adopt in 2020</title>
+		<link>https://www.onwardpath.com/2020/01/22/5-key-marketing-strategies-to-adopt-in-2020.html</link>
+					<comments>https://www.onwardpath.com/2020/01/22/5-key-marketing-strategies-to-adopt-in-2020.html#respond</comments>
+		
+		<dc:creator><![CDATA[Pandyan Ramar]]></dc:creator>
+		<pubDate>Wed, 22 Jan 2020 06:10:58 +0000</pubDate>
+				<category><![CDATA[Digital Marketing]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1676</guid>
+
+					<description><![CDATA[Is Jan 2020 any different from Dec 2019? Most likely not, however, it is that time of the year when you start making lists. Here is our list of the 5 key marketing strategies that every marketer should look at in 2020. Content is still king! According to Content Marketing Institute’s 2019 trends report, 77% ...]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img class="wp-image-1670" src="https://www.onwardpath.com/wp-content/uploads/2020/01/unnamed-min-1024x634.png" alt="" /></figure>
+
+
+
+<p class="has-text-align-justify">Is Jan 2020 any
+different from Dec 2019? Most likely not, however, it is that time of the year
+when you start making lists. Here is our list of the 5 key marketing strategies
+that every marketer should look at in 2020.</p>
+
+
+
+<ol>
+ 	<li><strong>Content is still king!</strong></li>
+</ol>
+
+
+
+
+According to Content
+Marketing Institute’s 2019 trends report, 77% of B2B marketers use content
+marketing.
+
+
+
+
+
+They use educational
+content and not promotional content to generate and nurture leads and build
+audience trust. Content marketing is the holy grail of any inbound marketing
+program.
+
+
+
+
+<p class="has-text-align-justify">Marketers use a
+variety of content that includes blogs, articles, white papers, case studies,
+newsletters, videos, infographics, webcasts, podcasts, eBooks, how-to guides,
+and social media content.</p>
+
+
+
+<p class="has-text-align-justify">It is great to have
+all of these, though it is not necessary to have all of these. You can start
+small and focus on a few content types before you spread yourself into other
+areas. This way you will know what works and what doesn’t with your audience
+segment.</p>
+
+
+
+
+How do you go about
+creating content for your business?
+
+
+
+
+
+Few steps to look at
+include:
+
+
+
+
+<ul>
+ 	<li>Create a content plan</li>
+ 	<li>Identify the assets that you want to create and the resources
+available to create those assets</li>
+ 	<li>Make sure that you have some fresh content every week</li>
+ 	<li>Constantly update your content – we will look at this
+in detail later in this piece</li>
+ 	<li>Create a calendar and stick to the calendar</li>
+</ul>
+
+
+
+<ul>
+ 	<li><strong>Personalize your marketing messages</strong></li>
+</ul>
+
+
+
+<p class="has-text-align-justify">Every consumer wants
+to be made special. When I get to see what I am looking for, the experience is
+different. Automation, analytics, and demographics are the way to go when you
+want to personalize your messages.</p>
+
+
+
+<p class="has-text-align-justify">At the same time, you
+have to be careful not to bombard your audience with too much content and make
+sure that every interaction is useful and relevant to them.</p>
+
+
+
+<p class="has-text-align-justify">Also, look at
+behavioral segmentation based on what the users read, what did they do in your site
+– made a purchase, abandoned the cart, abandoned after providing payment
+information, or made a repeat purchase.</p>
+
+
+
+<p class="has-text-align-justify">This would allow you
+to separate them into groups and you can speak to each group based on how they
+interact with your brand.</p>
+
+
+
+<ul>
+ 	<li><strong>Do your original research</strong></li>
+</ul>
+
+
+
+<p class="has-text-align-justify">Speak to your target
+segments and customers and try to understand things from their perspective.</p>
+
+
+
+<p class="has-text-align-justify">I was recently
+talking to a customer of ours and he shared this insight. They are into
+business intelligence and they were serving a handful of customers. One of
+those customers was a long-standing one and the engagement was constantly
+going. He asked them as to why they continue to engage them?</p>
+
+
+
+<p class="has-text-align-justify">The answer that he
+got was, “whatever we throw at you when it comes to business intelligence, you
+are able to deliver” and that’s the reason why we continue to work with you.</p>
+
+
+
+<p class="has-text-align-justify">This insight allowed
+them to reposition themselves and they started getting more business.</p>
+
+
+
+<p class="has-text-align-justify">Talking to your
+customers, prospects and user groups allows you to get a unique angle on your
+product stories or service stories. This would let you target your audience in
+ways that wouldn’t be possible otherwise</p>
+
+
+
+<ul>
+ 	<li><strong>Constantly update your content</strong></li>
+</ul>
+
+
+
+<p class="has-text-align-justify">I was watching a
+video of Neil Patel on how he was able to increase his website engagement by
+238% in 2019.</p>
+
+
+
+<p class="has-text-align-justify">He started with a
+base of more than a million visits already.</p>
+
+
+
+<p class="has-text-align-justify">One of the key
+strategies that he talks about is updating the content regularly. In fact, he
+writes a blog post every week and has his team of 3 content developers update
+about 90 articles/blogs every month.</p>
+
+
+
+<p class="has-text-align-justify">After all, search
+engines prefer fresh content and it is a sure-shot way to rank higher on the
+search, resulting in more visitors and customers.</p>
+
+
+
+<ul>
+ 	<li><strong>Start making explainer videos</strong></li>
+</ul>
+
+
+
+
+Have you tried
+explaining complex concepts?
+
+
+
+
+<p class="has-text-align-justify">The best way to
+explain is to do that with videos. There are umpteen tools available that would
+allow you to produce explainer videos very easily.</p>
+
+
+
+<p class="has-text-align-justify">Explainer videos
+allow you to explain complex concepts concisely. Most organizations use them to
+explain the benefits and functionality of what they do in an unambiguous
+manner. Search engines tend to rank videos better than other forms of content.
+So, it makes a lot of sense to invest your time and budget in explainer videos.</p>
+
+
+
+<p class="has-text-align-justify">Some of the companies
+that have made the most of explainer videos include Dollar Shave Club, Spotify,
+Microsoft, Crazy Egg, Chipotle and PayPal.</p>
+
+
+
+<p class="has-text-align-justify">These are simply
+bite-sized videos and the core focus will have to be towards making them
+simple, understandable and relatable to your audience.</p>
+
+
+
+<p class="has-text-align-justify">Attempt these 5 key
+strategies and your engagement with your audience would increase manifold.</p>
+
+
+
+<p class="has-text-align-justify"><em>Tags: content marketing, digital marketing, search
+engine ranking, explainer videos, personalization, web personalization,
+personalization marketing, content refresh, behavioral segmentation</em></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2020/01/22/5-key-marketing-strategies-to-adopt-in-2020.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Digital marketing – 5 hacks for 2020</title>
+		<link>https://www.onwardpath.com/2019/12/20/digital-marketing-5-hacks-for-2020.html</link>
+					<comments>https://www.onwardpath.com/2019/12/20/digital-marketing-5-hacks-for-2020.html#respond</comments>
+		
+		<dc:creator><![CDATA[Sabapathy Narayanan]]></dc:creator>
+		<pubDate>Fri, 20 Dec 2019 08:24:15 +0000</pubDate>
+				<category><![CDATA[Digital Marketing]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1653</guid>
+
+					<description><![CDATA[I was helping a Men’s underwear brand market their products online. We tried several things before we could make it successful. This blog is all about what worked for us and how you can make use of it for your products. When we started, we began with Facebook and Google advertising to drive traffic to ...]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img class="wp-image-1654" src="https://www.onwardpath.com/wp-content/uploads/2019/12/2nd-1024x634.png" alt="" /></figure>
+
+
+
+<p class="has-text-align-left">I was helping a Men’s
+underwear brand market their products online. We tried several things before we
+could make it successful. This blog is all about what worked for us and how you
+can make use of it for your products.</p>
+
+
+
+
+When we started, we
+began with Facebook and Google advertising to drive traffic to our website. We
+were able to drive a lot of traffic to our website but that wasn’t getting
+converted into orders. The conversion rates were anywhere between 1% and 2%.
+
+
+
+
+
+Many added our
+products to their carts and many of them even entered their payment details
+before abandoning the purchase.
+
+
+
+
+
+While we were
+successful in the first step of driving traffic, it was hard to convince
+someone to buy a product.
+
+
+
+
+
+We poured through several
+studies, statistics and we did a lot of analysis on what needed to be done. We
+came up with the following hacks that worked for us and we believe that it
+would work for you as well.
+
+
+
+
+
+<strong>Hack
+#1: Video of our product</strong>
+
+
+
+
+
+We video graphed our
+product being worn by models. With the video demonstration, we made sure that
+visitors spent more time on our site that allowed them to purchase the
+products. This was a game-changer as the conversions increased two-fold
+immediately and it keeps going up.
+
+
+
+
+
+<strong>Hack
+#2: User reviews</strong>
+
+
+
+
+
+We encouraged our
+customers and the early adopters to write real reviews on our site about the
+product. We added their photographs and the unpacked photographs of the product
+along with the reviews. Anyone who reviewed got an additional discount on their
+next purchase, irrespective of whether the review was good or bad.
+
+
+
+
+
+<strong>Hack
+#3: Customers as our ambassadors</strong>
+
+
+
+
+
+We came up with
+multiple fits using various materials. We did wearer testing using our existing
+customers. We sent one pair of every new design and material to each of the
+testers. We got feedback from them in terms of comfort, fit, coverage and style
+and we published the feedback that we received on our website and our social
+channels. This resulted in our sales going up substantially.
+
+
+
+
+
+<strong>Hack
+#4: Focus on existing customers </strong>
+
+
+
+
+
+We focused on our
+existing customers and our repeat orders became huge. Acquisition cost with
+existing customers is near-zero and the conversion rates were in the range of
+8% to 10%.
+
+
+
+
+
+<strong>Hack
+#5: Personalized promotions </strong>
+
+
+
+
+
+We had three design
+cuts in a variety of materials – trunks, briefs, and boxer briefs for various
+types of bodies.
+
+
+
+
+
+We focused our
+promotions in a personalized manner addressed those body types:
+
+
+
+
+<ol>
+ 	<li>Gym-honed and toned men</li>
+ 	<li>Well-endowed men and men with thighs</li>
+ 	<li>Taller men and men with larger butts</li>
+</ol>
+
+
+
+
+Different cuts of
+ours worked well for these body types. We designed specific landing pages that
+brought out the features and benefits of the products while addressing the
+typical challenges that these body types face while using underwear.
+
+
+
+
+
+This campaign was a
+huge hit among our audience.
+
+
+
+
+
+Every marketer wants
+to offer a better customer experience, which in turn would result in better
+revenues. The aforementioned digital marketing hacks were based on our own experience
+and we believe that this would add value to any eCommerce and online
+marketplace selling.
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2019/12/20/digital-marketing-5-hacks-for-2020.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Consumer journeys are becoming increasingly complex – what should marketers do about it?</title>
+		<link>https://www.onwardpath.com/2019/12/20/consumer-journeys-are-becoming-increasingly-complex-what-should-marketers-do-about-it.html</link>
+					<comments>https://www.onwardpath.com/2019/12/20/consumer-journeys-are-becoming-increasingly-complex-what-should-marketers-do-about-it.html#respond</comments>
+		
+		<dc:creator><![CDATA[Pandyan Ramar]]></dc:creator>
+		<pubDate>Fri, 20 Dec 2019 08:09:16 +0000</pubDate>
+				<category><![CDATA[Digital Marketing]]></category>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=1645</guid>
+
+					<description><![CDATA[According to Google and YouTube data and research, ‘Consumer journeys are becoming increasingly complex’ is the No. 1 insight that they uncovered in the year 2019 and they expect it to continue into 2020. Some of the key findings of this research include: “Simple” + “ideas” mobile queries have grown by over 60% over the ...]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img class="wp-image-1651" src="https://www.onwardpath.com/wp-content/uploads/2019/12/1st-article-2-1024x634.png" alt="Social Media" /></figure>
+
+
+
+
+According to Google and YouTube data and research, ‘Consumer journeys are becoming increasingly complex’ is the No. 1 insight that they uncovered in the year 2019 and they expect it to continue into 2020.
+
+
+
+
+
+<strong>Some of the key findings of this research include: </strong>
+
+
+
+
+<ul>
+ 	<li>“Simple” + “ideas” mobile queries have grown by over
+60% over the last two years [i.e., simple dinner ideas, simple costume ideas,
+simple drawing ideas]</li>
+ 	<li>Mobile search for “personalized” have grown by over
+60% in the past two years [e.g., personalized gifts, personalized stockings,
+personalized blankets, personalized necklaces]</li>
+ 	<li>Mobile searches for “rewards app” have grown by over
+90% in the past two years</li>
+ 	<li>83% of U.S. shoppers who visited a store say they used
+online search before going into a store</li>
+ 	<li>45% of global shoppers buy online and then pick up
+in-store, which offers them a more flexible way to purchase and receive their
+items</li>
+ 	<li>More than 55% of shoppers say they used online video
+while shopping in a store</li>
+</ul>
+
+
+
+
+<strong>What
+do these things mean to a marketer? </strong>
+
+
+
+
+
+Digital channels,
+touchpoints and choices continue to expand – web, social, offline with shoppers
+jumping between online and offline channels. Also, Omnichannel is gaining a lot
+of traction. This results in complex customer journeys.
+
+
+
+
+
+For marketers, making
+sense of how to engage customers in their preferred channels has never been
+trickier.
+
+
+
+
+
+<strong>What
+should marketers do to sail through this complexity? </strong>
+
+
+
+
+
+Most marketers make
+the mistake of looking at it from the operations perspective and not from the
+business and customer perspective. They end up buying expensive technology that
+can deliver all the channels. Let us assume that you have all the channels that
+your customers would probably like, you still have to make sure that those
+channels are serviced and make sure that it works for you.
+
+
+
+
+
+Let us look at a
+step-by-step approach of how your digital marketing can be structured keeping
+in mind the evolving complexities of the customer journey.
+
+
+
+
+
+Let us assume that
+you know who your target customers are and the value of what you are selling
+them. What you need to crack here is &#8211; how do you engage them and how do you
+take their conversations to conversions. The key steps that marketing should
+look at include:
+
+
+
+
+
+<strong>Identify
+your channels and equip yourself to serve!</strong>
+
+
+
+
+
+Email, Web, Chat,
+Voice, Video, Social and Offline are the possible channels and there are
+subsets within them. On the social, you are looking at Facebook and Instagram
+if your target customers are millennials and LinkedIn and Twitter if your
+target customers are B2B.
+
+
+
+
+
+Besides, you would
+also have information related to how your website is being used, how your
+social channels are used, how your customer service and customer support are
+used. Based on this, you can make an informed decision to enable the channels
+that your customers and prospects are most likely to use.
+
+
+
+
+
+Once you have
+identified the channel, you have to figure out a way by which you intelligently
+route conversations and interactions to the right resources within your organization
+in a real-time manner. Only then, it would provide the necessary experience.
+
+
+
+
+
+Ensure that you have
+the right technology to make this possible and ensure that you have the right
+resources available to address the needs of your prospects and customers.
+
+
+
+
+
+<strong>Keep
+your website mobile-friendly</strong>
+
+
+
+
+
+Mobile offers
+ubiquitous-ness and immediacy to everything that the user does. Most searches
+originate from a handheld or a mobile device. Any friction in that experience
+will result in lost revenues.
+
+
+
+
+
+<strong>Single
+view of the customer </strong>
+
+
+
+
+
+You need to have the
+right technology to ensure that all the interactions and conversations of
+customers and prospects are captured. This would allow your marketing message
+owners and agents to provide the right information, upsell, cross-sell and
+resolve issues &#8211; allowing your customers to experience your offerings
+positively.
+
+
+
+
+
+<strong>Personalize.
+Personalize. Personalize.</strong>
+
+
+
+
+
+You understand the
+habits of your visitors to your website, eCommerce platform, social pages, and
+chatbots among others.
+
+
+
+
+
+Make sure that you
+dynamically deliver what the user is most likely expecting to see. For
+instance, if the user’s preference is all about expensive watches, ensure that
+it is displayed as soon as the user logs in to your site.
+
+
+
+
+
+Another example can
+be, when you know that the user has surfed your banking site for business
+loans, show them the offers on business loans when they login again. That makes
+the experience worthwhile for the users and it makes business sense for you.
+
+
+
+
+
+<strong>Have
+a content plan </strong>
+
+
+
+
+
+Content budget in
+most organizations go up year-on-year. However, they don’t have a formal
+content development or management plan.
+
+
+
+
+
+Every content piece
+that is created should have a purpose – target audience, expected results,
+asset reuse in different channels, multimedia to go with the content like
+images and video. There has to be a way to measure the results on how the
+content is performing and that should be a part of the feedback loop on what
+gets generated month-on-month.
+
+
+
+
+
+In essence, marketers
+need to look at their marketing holistically and it is cyclical as well as
+structural in nature. The three key things to look at are:
+
+
+
+
+
+<strong>Customer insights</strong>–track and
+analyze customer behavior. Deliver insights regularly to the decision-makers
+
+
+
+
+
+<strong>Customer experience </strong>– define and
+design customer journeys based on insights. Integrate functions and features to
+deliver a great experience
+
+
+
+
+
+<strong>Measure effectiveness</strong> – continuously track and manage the programs and campaigns. Adapt based on the feedback. Customers are using possibly all the available channels to arrive at their purchasing decisions. As a marketer, use data to map customer needs, wants, and desires and use those insights to develop superior customer experience.
+
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.onwardpath.com/2019/12/20/consumer-journeys-are-becoming-increasingly-complex-what-should-marketers-do-about-it.html/feed</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

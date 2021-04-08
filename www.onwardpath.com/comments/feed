@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments for OnwardPath	</title>
+	<atom:link href="https://www.onwardpath.com/comments/feed" rel="self" type="application/rss+xml" />
+	<link>https://www.onwardpath.com</link>
+	<description>Delivering Digital Experiences</description>
+	<lastBuildDate>Sat, 19 Sep 2020 11:16:36 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7</generator>
+	<item>
+		<title>
+		Comment on WebCenter Resources you must know by Jonathan Hult		</title>
+		<link>https://www.onwardpath.com/2015/05/27/webcenter-resources-must-know.html#comment-22</link>
+
+		<dc:creator><![CDATA[Jonathan Hult]]></dc:creator>
+		<pubDate>Wed, 30 Dec 2015 01:46:31 +0000</pubDate>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=599#comment-22</guid>
+
+					<description><![CDATA[https://jonathanhult.com/blog/category/oracle/]]></description>
+			<content:encoded><![CDATA[<p><a href="https://jonathanhult.com/blog/category/oracle/" rel="nofollow ugc">https://jonathanhult.com/blog/category/oracle/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Date formatting while using RIDC by Jonathan Hult		</title>
+		<link>https://www.onwardpath.com/2015/09/19/date-formatting-while-using-ridc.html#comment-23</link>
+
+		<dc:creator><![CDATA[Jonathan Hult]]></dc:creator>
+		<pubDate>Wed, 30 Dec 2015 01:41:08 +0000</pubDate>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=640#comment-23</guid>
+
+					<description><![CDATA[Added here: https://jonathanhult.com/blog/2012/12/ridc-examples/]]></description>
+			<content:encoded><![CDATA[<p>Added here: <a href="https://jonathanhult.com/blog/2012/12/ridc-examples/" rel="nofollow ugc">https://jonathanhult.com/blog/2012/12/ridc-examples/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Webcenter Content User Security Check in RIDC call for Specific Content by Jonathan Hult		</title>
+		<link>https://www.onwardpath.com/2015/09/29/webcenter-content-user-security-check-in-ridc-call-for-specific-content.html#comment-24</link>
+
+		<dc:creator><![CDATA[Jonathan Hult]]></dc:creator>
+		<pubDate>Wed, 30 Dec 2015 01:38:04 +0000</pubDate>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=652#comment-24</guid>
+
+					<description><![CDATA[Added here: https://jonathanhult.com/blog/2012/12/ridc-examples/]]></description>
+			<content:encoded><![CDATA[<p>Added here: <a href="https://jonathanhult.com/blog/2012/12/ridc-examples/" rel="nofollow ugc">https://jonathanhult.com/blog/2012/12/ridc-examples/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Troubleshooting Out of Memory issues in WebCenter by Виктор		</title>
+		<link>https://www.onwardpath.com/2013/06/01/troubleshooting-out-of-memory-issues-in-webcenter.html#comment-21</link>
+
+		<dc:creator><![CDATA[Виктор]]></dc:creator>
+		<pubDate>Fri, 27 Nov 2015 06:58:30 +0000</pubDate>
+		<guid isPermaLink="false">https://www.onwardpath.com/?p=204#comment-21</guid>
+
+					<description><![CDATA[When your application is running with some error condition, it can have a big impact on performance. For example, if a connection to WebCenter Content Server becomes intermittent or not accessible, pages with content related components respond very slowing while attempting to connect and eventually may time out.]]></description>
+			<content:encoded><![CDATA[<p>When your application is running with some error condition, it can have a big impact on performance. For example, if a connection to WebCenter Content Server becomes intermittent or not accessible, pages with content related components respond very slowing while attempting to connect and eventually may time out.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>
